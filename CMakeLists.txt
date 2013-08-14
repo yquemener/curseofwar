@@ -56,10 +56,10 @@ if(CW_SDL_FRONTEND)
     endif(CW_SDL_MULTIPLAYER)
 
     ADD_EXECUTABLE(curseofwar-sdl ${SOURCE_COMMON} ${SOURCE_OPTIONAL} ${SOURCE_SDL})
-    if(WIN32)
+    if(MSVC)
         # SDL under windows is more comfortable in a console application instead of a windowed one
         set_target_properties(curseofwar-sdl PROPERTIES LINK_FLAGS "/SUBSYSTEM:CONSOLE")
-    endif(WIN32)    
+    endif(MSVC)
     TARGET_LINK_LIBRARIES(curseofwar-sdl ${COMMON_LIBS} ${SDL_LIBRARY} )
 endif(CW_SDL_FRONTEND)
 
